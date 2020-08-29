@@ -1,5 +1,3 @@
-" Vim with all enhancements
-source $VIMRUNTIME/vimrc_example.vim
 set nu
 set expandtab
 set tabstop=2
