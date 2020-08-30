@@ -1,21 +1,5 @@
-set nu
-set expandtab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set smarttab
-set ww+=<,>
-set autoindent
-syntax on
-colorscheme default
-highlight Normal ctermbg=black
-highlight LineNr ctermfg=lightred
-highlight String ctermfg=yellow
-highlight Comment ctermfg=gray
-let g:monokai_term_italic=1
-let g:monokai_gui_italic=1
-filetype plugin indent on
 call plug#begin('~/vim/plugged')
+  Plug 'dracula/vim', {'as' : 'dracula'}
   Plug 'scrooloose/nerdtree'
   Plug 'vim-python/python-syntax'
   Plug 'octol/vim-cpp-enhanced-highlight'
@@ -25,6 +9,33 @@ call plug#begin('~/vim/plugged')
   Plug 'alvan/vim-closetag'
   Plug 'pangloss/vim-javascript'
 call plug#end()
+
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set shiftround
+
+set ww+=<,>
+
+set autoindent
+set smartindent
+
+set nobackup
+set nowritebackup
+set noswapfile
+
+set relativenumber
+set number
+set numberwidth=5
+syntax on
+
+set clipboard=unnamedplus
+set background=dark
+colorscheme dracula
+
+filetype plugin indent on
+
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
