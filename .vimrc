@@ -30,7 +30,7 @@ set number
 set numberwidth=5
 syntax on
 
-set clipboard=unnamedplus
+set clipboard=unnamed
 set background=dark
 colorscheme dracula
 
@@ -41,6 +41,7 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 "mapping
+noremap x "_x
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ` ``<left>
@@ -56,6 +57,7 @@ inoremap {<CR> {<CR>}<ESC>O
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 let g:class_scope_highlight = 1 
+
 " Use the internal diff if available.
 " Otherwise use the special 'diffexpr' for Windows.
 if &diffopt !~# 'internal'
