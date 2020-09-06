@@ -61,7 +61,7 @@ colorscheme default
 
 if has('gui_running')
   colorscheme dracula
-  set guifont=Hack\ 18
+  set guifont=Hack:h12
 endif
 filetype plugin indent on
 
