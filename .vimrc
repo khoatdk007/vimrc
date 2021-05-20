@@ -51,13 +51,12 @@ set noswapfile
 
 set relativenumber
 set number
-set numberwidth=5
+set numberwidth=4
 syntax on
 
 set backspace=indent,eol,start
-set clipboard=unnamed
+set clipboard=unnamedplus
 set background=dark
-colorscheme default
 
 if has('gui_running')
   colorscheme dracula
@@ -67,8 +66,6 @@ filetype plugin indent on
 
 "custom highlight
 hi LineNR ctermfg=darkblue
-set cursorline
-hi clear cursorline
 hi CursorLineNR ctermfg=yellow ctermbg=black
 hi Number ctermfg=blue
 hi String ctermfg=yellow
@@ -82,6 +79,7 @@ hi jsFuncName ctermfg=green
 hi jsArrowFunction ctermfg=magenta
 hi jsFunction ctermfg=magenta
 hi VertSplit ctermfg=gray ctermbg=black
+set cursorline
 
 noremap <Up> <NOP>
 noremap <Down> <NOP>
@@ -92,17 +90,7 @@ noremap g= gg=G
 noremap x "_x
 xnoremap x x
 "mapping
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ` ``<left>
-inoremap [ []<left>
-inoremap [] []
-inoremap [; [];<left><left>
-inoremap ( ()<left>
-inoremap (; ();<left><left>
-inoremap () ()
-inoremap { {}<left>
-inoremap {} {}
+
 inoremap {<CR> {<CR>}<ESC>O
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
