@@ -10,6 +10,7 @@ Plug 'alvan/vim-closetag'
 Plug 'pangloss/vim-javascript'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'joshdick/onedark.vim', {'as': 'onedark'}
 call plug#end()
 
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*js'
@@ -18,7 +19,7 @@ let g:closetag_regions = {
       \'tjavascript.jsx': 'jsxRegion',
       \}
 let g:lightline = {
-      \ 'colorscheme': 'darcula',
+      \ 'colorscheme': 'onedark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'cocstatus', 'readonly', 'filename', 'modified' ] ],
@@ -31,6 +32,7 @@ let g:lightline = {
       \   'gitbranch': 'fugitive#head',
       \ },
       \ }
+set laststatus=2
 let NERDTreeShowHidden=1
 noremap <C-s> :NERDTreeToggle<CR>
 set expandtab
@@ -39,6 +41,7 @@ set shiftwidth=2
 set softtabstop=2
 set shiftround
 set hlsearch
+colorscheme dracula
 
 set ww+=<,>
 
@@ -57,6 +60,7 @@ syntax on
 set backspace=indent,eol,start
 set clipboard=unnamedplus
 set background=dark
+set termguicolors
 
 if has('gui_running')
   colorscheme dracula
@@ -65,20 +69,20 @@ endif
 filetype plugin indent on
 
 "custom highlight
-hi LineNR ctermfg=darkblue
-hi CursorLineNR ctermfg=yellow ctermbg=black
-hi Number ctermfg=blue
-hi String ctermfg=yellow
-hi Boolean ctermfg=blue
-hi Include ctermfg=magenta
-hi Special ctermfg=magenta
-hi Comment ctermfg=darkblue
-hi Statement ctermfg=magenta
-hi jsFuncCall ctermfg=green
-hi jsFuncName ctermfg=green
-hi jsArrowFunction ctermfg=magenta
-hi jsFunction ctermfg=magenta
-hi VertSplit ctermfg=gray ctermbg=black
+"hi LineNR ctermfg=darkblue
+"hi CursorLineNR ctermfg=yellow ctermbg=black
+"hi Number ctermfg=blue
+"hi String ctermfg=yellow
+"hi Boolean ctermfg=blue
+"hi Include ctermfg=magenta
+"hi Special ctermfg=magenta
+"hi Comment ctermfg=darkblue
+"hi Statement ctermfg=magenta
+"hi jsFuncCall ctermfg=green
+"hi jsFuncName ctermfg=green
+"hi jsArrowFunction ctermfg=magenta
+"hi jsFunction ctermfg=magenta
+"hi VertSplit ctermfg=gray ctermbg=black
 set cursorline
 
 noremap <Up> <NOP>
