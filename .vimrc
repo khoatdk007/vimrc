@@ -84,6 +84,7 @@ filetype plugin indent on
 "hi jsFunction ctermfg=magenta
 "hi VertSplit ctermfg=gray ctermbg=black
 set cursorline
+hi clear cursorline
 
 noremap <Up> <NOP>
 noremap <Down> <NOP>
