@@ -64,39 +64,24 @@ set termguicolors
 
 if has('gui_running')
   colorscheme dracula
-  set guifont=Hack:h12
+  set guifont="Monospace Regular":h12
 endif
 filetype plugin indent on
 
-"custom highlight
-"hi LineNR ctermfg=darkblue
-"hi CursorLineNR ctermfg=yellow ctermbg=black
-"hi Number ctermfg=blue
-"hi String ctermfg=yellow
-"hi Boolean ctermfg=blue
-"hi Include ctermfg=magenta
-"hi Special ctermfg=magenta
-"hi Comment ctermfg=darkblue
-"hi Statement ctermfg=magenta
-"hi jsFuncCall ctermfg=green
-"hi jsFuncName ctermfg=green
-"hi jsArrowFunction ctermfg=magenta
-"hi jsFunction ctermfg=magenta
-"hi VertSplit ctermfg=gray ctermbg=black
 set cursorline
 hi clear cursorline
-
+inoremap {<CR> {}<Left><CR><ESC>O
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 noremap <C-h> :noh<CR>
-noremap g= gg=G
+noremap g= mzgg=G`z
 noremap x "_x
 xnoremap x x
 "mapping
-
-inoremap {<CR> {<CR>}<ESC>O
+autocmd filetype cpp nnoremap <F9> :w <bar> !clear; g++ -std=c++17 % -O2 -Wall -Wextra -DLOCAL -o %:r; if [ -f %:r ]; then time ./%:r; rm %:r; fi<CR>
+autocmd filetype c map <F9> :w <bar> :!clear; gcc -g -Wall % -o %:r; if [ -f %:r ]; then time ./%:r; rm %:r; fi <CR>
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 let g:class_scope_highlight = 1 
