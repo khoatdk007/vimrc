@@ -25,6 +25,7 @@ set cursorline
 hi clear cursorline
 
 set noswapfile
+set backspace=indent,eol,start
 
 "==========Mapping==========
 imap {<CR> {<CR>}<ESC>O
