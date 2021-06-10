@@ -20,6 +20,7 @@ set linebreak
 "==========
 set termguicolors
 colorscheme dracula
+set nu
 set relativenumber
 set cursorline
 hi clear cursorline
