@@ -19,6 +19,7 @@ set linebreak
 
 "==========
 set termguicolors
+set colorcolumn=80
 colorscheme dracula
 set nu
 set relativenumber
