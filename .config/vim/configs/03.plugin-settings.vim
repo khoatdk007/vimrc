@@ -1,5 +1,5 @@
 "NERDTree
-map <Leader>f :NERDTreeFocus<CR>
+map <Leader>r :NERDTreeFocus<CR>
 map <Leader>t :NERDTreeToggle<CR>
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
       \ quit | endif
@@ -23,6 +23,16 @@ let g:lightline = {
 set laststatus=2
 
 "Cpp format 
+let g:cpp_attributes_highlight = 1
+let g:cpp_simple_highlight = 1
+
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 let g:class_scope_highlight = 1 
+
+"Comment
+nmap <Leader>c gcc
+vmap <Leader>c gc
+
+"FZF
+map <Leader>f :FZF<CR>
