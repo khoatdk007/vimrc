@@ -4,8 +4,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-surround'
-Plug 'junegunn/fzf'
+Plug 'tpope/vim-commentary'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'joshdick/onedark.vim', {'as': 'onedark'}
 call plug#end()
-
