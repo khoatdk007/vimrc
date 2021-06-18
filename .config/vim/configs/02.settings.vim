@@ -1,6 +1,8 @@
 let mapleader = ","
 
-set shell=powershell
+if has("win32") || (has("gui_running") && has("gui_win32"))
+  set shell=powershell
+endif
 
 set autoindent
 set smartindent
@@ -21,7 +23,9 @@ set linebreak
 
 "==========
 set termguicolors
+set colorcolumn=80
 colorscheme dracula
+set nu
 set relativenumber
 set cursorline
 hi clear cursorline
@@ -43,10 +47,14 @@ map <Down> <NOP>
 map <Left> <NOP>
 map <Right> <NOP>
 map <C-h> :noh<CR>
-map g= mzgg=G`z
-autocmd filetype cpp nmap <Leader>z :s/^\(\s*\)/\1\/\/<CR> :s/^\(\s*\)\/\/\/\//\1<CR> $
-autocmd filetype cpp nmap <F8> :w <bar> !cls; g++ -std=c++17 -Wall % -o %:r \"-Wl,--stack=268435456\"<CR>
-autocmd filetype cpp nmap <F9> :!cls; ./%:r;<CR>
+map g= mzgg=G`zzz
+if has("win32") || (has("gui_running") && has("gui_win32"))
+  autocmd filetype cpp nmap <F8> :w <bar> !cls; g++ -std=c++17 -Wall % -o %:r \"-Wl,--stack=268435456\"<CR>
+  autocmd filetype cpp nmap <F9> :!cls; ./%:r;<CR>
+else
+  autocmd filetype cpp nmap <F8> :w <bar> !clear;  g++ -static -Wall -Wextra -std=c++17 % -o %:r <CR>
+  autocmd filetype cpp nmap <F9> :!clear; if [ -f %:r ]; then time ./%:r; else echo "Not compiled yet"; fi <CR>
+endif
 autocmd filetype c map <F8> :w <bar> :!clear; gcc -g -Wall % -o %:r;<CR>
 autocmd filetype c nmap <F9> :!clear; if [ -f %:r ]; then time ./%:r; else echo "Not compiled yet"; fi<CR>
 "avoid recursion :v
