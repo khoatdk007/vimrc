@@ -12,7 +12,7 @@ set shiftwidth=2
 set smarttab
 set tabstop=2
 
-set hlsearch
+set nohlsearch
 set ignorecase
 set incsearch
 set smartcase
@@ -25,7 +25,7 @@ set linebreak
 set termguicolors
 set colorcolumn=80
 colorscheme dracula
-set nu
+set number
 set relativenumber
 set cursorline
 hi clear cursorline
