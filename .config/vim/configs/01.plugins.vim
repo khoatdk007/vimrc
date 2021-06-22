@@ -7,5 +7,5 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'townk/vim-autoclose'
+Plug 'vim-scripts/ClosePairs'
 call plug#end()
