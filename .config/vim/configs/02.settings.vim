@@ -4,6 +4,7 @@ if has("win32") || (has("gui_running") && has("gui_win32"))
   set shell=powershell
 endif
 
+set history=1000
 set autoindent
 set smartindent
 set expandtab
@@ -40,7 +41,6 @@ set backspace=indent,eol,start
 
 "==========Mapping==========
 imap {<CR> {<CR>}<ESC>O
-imap {{ {
 map <Leader>w <C-w>w
 map <Up> <NOP>
 map <Down> <NOP>
@@ -58,13 +58,13 @@ endif
 autocmd filetype c map <F8> :w <bar> :!clear; gcc -g -Wall % -o %:r;<CR>
 autocmd filetype c nmap <F9> :!clear; if [ -f %:r ]; then time ./%:r; else echo "Not compiled yet"; fi<CR>
 "avoid recursion :v
-map x "_s<ESC>l
-nmap x s<ESC>l
+"map x i<DEL><ESC>l
+"nmap x s<ESC>l
  
 "change cursor for insert mode
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
-set ttimeoutlen=0
+set ttimeoutlen=100
 set belloff=all
 set t_vb=
 cd ~/CP
