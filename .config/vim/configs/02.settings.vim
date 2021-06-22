@@ -32,7 +32,7 @@ set cursorline
 hi clear cursorline
 if has("gui_running")
   if has("gui_win32")
-    set guifont=Consolas:h11:cANSI
+    set guifont=Cascadia_Code:h11:cANSI
   endif
 endif
 
@@ -48,23 +48,27 @@ map <Left> <NOP>
 map <Right> <NOP>
 map <C-h> :noh<CR>
 map g= mzgg=G`zzz
-if has("win32") || (has("gui_running") && has("gui_win32"))
+if has("win32")
   autocmd filetype cpp nmap <F8> :w <bar> !cls; g++ -std=c++17 -Wall % -o %:r \"-Wl,--stack=268435456\"<CR>
   autocmd filetype cpp nmap <F9> :!cls; ./%:r;<CR>
 else
   autocmd filetype cpp nmap <F8> :w <bar> !clear;  g++ -static -Wall -Wextra -std=c++17 % -o %:r <CR>
   autocmd filetype cpp nmap <F9> :!clear; if [ -f %:r ]; then time ./%:r; else echo "Not compiled yet"; fi <CR>
 endif
+if (has("gui_running") && has("gui_win32"))
+  autocmd filetype cpp nmap <F8> :w <bar> !cls; g++ -std=c++17 -Wall % -o %:r \"-Wl,--stack=268435456\"<CR><CR>
+  autocmd filetype cpp nmap <F9> :!cls; ./%:r;<CR><CR>
+endif
 autocmd filetype c map <F8> :w <bar> :!clear; gcc -g -Wall % -o %:r;<CR>
 autocmd filetype c nmap <F9> :!clear; if [ -f %:r ]; then time ./%:r; else echo "Not compiled yet"; fi<CR>
 "avoid recursion :v
 "map x i<DEL><ESC>l
 "nmap x s<ESC>l
- 
+
 "change cursor for insert mode
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
-set ttimeoutlen=100
+set ttimeoutlen=5000
 set belloff=all
 set t_vb=
 cd ~/CP
