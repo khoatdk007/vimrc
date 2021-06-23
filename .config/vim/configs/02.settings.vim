@@ -68,7 +68,7 @@ autocmd filetype c nmap <F9> :!clear; if [ -f %:r ]; then time ./%:r; else echo 
 "change cursor for insert mode
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
-set ttimeoutlen=5000
+set ttimeoutlen=0
 set belloff=all
 set t_vb=
 cd ~/CP
