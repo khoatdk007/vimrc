@@ -71,4 +71,3 @@ let &t_EI = "\e[2 q"
 set ttimeoutlen=0
 set belloff=all
 set t_vb=
-cd ~/CP
